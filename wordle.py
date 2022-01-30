@@ -66,15 +66,16 @@ def solve() -> None:
         for w in words:
             print(w)
 
-        print(f"Best word: '{calculate(words)}'")
+        print(f"Best word: '{calculate(words, False)}'")
         
-        if input(":"):
+        if input("[press enter to continue or type 'exit' to exit] ") == 'exit':
             found = True
+        else:
+            print()
 
 
-def calculate(words: list) -> str:
+def calculate(words: list, display_mode: bool) -> str:
     letter_freq = {}
-    #words = get_words()
 
     for ac in range(97, 123):
         letter_freq[chr(ac)] = 0
@@ -83,8 +84,9 @@ def calculate(words: list) -> str:
         for c in w:
             letter_freq[c] += 1
 
-    for p in letter_freq:
-        print(f"{p}: {letter_freq[p]}")
+    if display_mode:
+        for p in letter_freq:
+            print(f"{p}: {letter_freq[p]}")
 
     best_word = ""
     best_score = 0
@@ -97,7 +99,8 @@ def calculate(words: list) -> str:
             best_word = w
             best_score = score
     
-    print(f"{best_word} : {best_score}")
+    if display_mode:
+        print(f"{best_word} : {best_score}")
 
     return best_word
 
@@ -111,7 +114,7 @@ def main() -> None:
             break
 
         elif x == 'c':
-            calculate(get_words())
+            calculate(get_words(), True)
             break
     
     
