@@ -18,7 +18,7 @@ def contains(word: str, *letter_list: tuple) -> bool:
     return True
 
 
-def check_format(cmd_list) -> bool:
+def check_format(cmd_list: list) -> bool:
     if len(cmd_list) != 5:
         return False
     
