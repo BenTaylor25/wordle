@@ -1,7 +1,4 @@
 
-from pickle import FALSE
-
-
 def get_words() -> list:
     with open('words.txt') as file:
         words = file.read().split()
