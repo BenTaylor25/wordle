@@ -1,3 +1,5 @@
+# Wordle Solver
+
 Wordle is a fun 5-letter word game based off of the logic game Mastermind.
 Every day, there is a new worde puzzle, and I've created a solver for it.
 
