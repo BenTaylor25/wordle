@@ -2,7 +2,7 @@
 def get_words() -> list:
     with open('words.txt') as file:
         words = file.read().split()
-    return remove_words_with_duplicate_letters(words)
+    return words #remove_words_with_duplicate_letters(words)
 
 def remove_words_with_duplicate_letters(words: list) -> list:
     new_words = []
@@ -35,7 +35,7 @@ def my_filter(words: list, rule: str) -> list:
         return list(filter(lambda word : word[ind] == rule[1], words))
     
     if rule[1] == '!':
-        return list(filter(lambda word : rule[2] not in word, words))
+        return list(filter(lambda word : rule[2] not in word, words)) 
     
     # rule[1] == '?'
     return list(filter(lambda word : rule[2] in word and word[ind] != rule[2], words))
